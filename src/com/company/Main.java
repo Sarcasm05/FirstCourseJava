@@ -44,17 +44,8 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < m; j++) {
-                System.out.print(matrix[i][j] + ", ");
-            }
-            System.out.println();
-        }
-
         //5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
-        //array = new byte[]{1, 5, 3, -6, 11, 4, -4, 2, 4, 8, 9, 1};
         array = new byte[]{0};
-        System.out.println(array.length);
         byte min = array[0], max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max){
@@ -63,24 +54,16 @@ public class Main {
                 min = array[i];
             }
         }
-        System.out.println("max = " + max + " min = " + min);
-
-        int[] testArr = new int[]{2, 2, 2, 1, 2, 2, 10, 1};
-        boolean testFlag = checkBalance(testArr);
-        System.out.println(testFlag);
-
     }
     //6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true,
     // если в массиве есть место, в котором сумма левой и правой части массива равны.
-    // Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true,
-    // граница показана символами ||, эти символы в массив не входят.
     public static boolean checkBalance(int[] arr){
         int sum = 0;
         for (int j : arr) {
             sum += j;
         }
         int counter = 0;
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             if (counter + arr [i] == sum / 2)
                 return true;
             counter += arr[i];
@@ -88,12 +71,51 @@ public class Main {
         return false;
     }
 
-    public static void shiftElementsArray(int[] arr, int n){
-
-    }
     //7. **** Написать метод, которому на вход подается одномерный массив и число n
     // (может быть положительным, или отрицательным), при этом метод должен сместить все элементы массива на n позиций.
     // Элементы смещаются циклично. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
-    // Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ].
-    // При каком n в какую сторону сдвиг можете выбирать сами.
+    public static int[] shiftElementsArray(int[] arr, int n){
+        int buff, currIndex, goingIndex;
+
+        for (int i = 0; i < divisor(n, arr.length); i++) {
+            buff = arr[i];
+            currIndex = i;
+            if (n > 0) {
+                while (true){
+                    goingIndex = currIndex + n;
+                    if (goingIndex >= arr.length){
+                        goingIndex -= arr.length;
+                    }
+                    if (goingIndex == i){
+                        break;
+                    }
+                    arr[currIndex] = arr[goingIndex];
+                    currIndex = goingIndex;
+                }
+            }else if (n < 0){
+                while (true){
+                    goingIndex = currIndex + n;
+                    if (goingIndex < 0){
+                        goingIndex += arr.length;
+                    }
+                    if (goingIndex == i){
+                        break;
+                    }
+                    arr[currIndex] = arr[goingIndex];
+                    currIndex = goingIndex;
+                }
+            }
+        }
+        return arr;
+
+    }
+
+    //Наибольший общий делитель, алгоритм Евклида
+    public static int divisor(int x, int y){
+        if (y == 0){
+            return 0;
+        }else {
+            return divisor(y, x % y);
+        }
+    }
 }
