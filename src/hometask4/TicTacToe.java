@@ -41,6 +41,7 @@ public class TicTacToe {
             }
         }
         System.out.println("Игра окончена!");
+        sc.close();
     }
 
     public static void initMap() {
@@ -132,4 +133,5 @@ public class TicTacToe {
         }
         return true;
     }
+
 }
