@@ -11,7 +11,7 @@ public class Main {
         Random rand = new Random();
         String aIanswer = words[rand.nextInt(words.length)];
         System.out.println("Игра УГАДАЙ СЛОВО!!!!!");
-        System.out.println("Слово компьютера: " + aIanswer);
+        //System.out.println("Слово компьютера: " + aIanswer);
         int attemptCounter = 1;
         do {
             System.out.println("Введите слово не длиннее 15 символов только в нижнем регистре: ");
