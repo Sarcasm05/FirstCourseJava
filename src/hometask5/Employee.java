@@ -5,13 +5,15 @@ public class Employee {
     private String position;
     private String email;
     private String phone;
+    private int salary;
     private int age;
 
-    Employee(String fullName, String position, String email, String phone, int age){
+    Employee(String fullName, String position, String email, String phone, int salary, int age){
         this.fullName = fullName;
         this.position = position;
         this.email = email;
         this.phone = phone;
+        this.salary = salary;
         this.age = age;
     }
 
@@ -20,27 +22,11 @@ public class Employee {
         System.out.println("Должность: " + this.position);
         System.out.println("Email: " + this.email);
         System.out.println("Телефон: " + this.phone);
+        System.out.println("Зарплата: " + this.salary);
         System.out.println("Возраст: " + this.age);
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 
     public int getAge() {
         return age;
     }
-
 }
