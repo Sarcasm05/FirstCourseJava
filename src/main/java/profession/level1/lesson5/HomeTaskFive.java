@@ -1,4 +1,4 @@
-package hometask5;
+package main.java.profession.level1.lesson5;
 
 public class HomeTaskFive {
     public static void main(String[] args) {

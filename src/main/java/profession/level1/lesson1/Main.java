@@ -1,4 +1,4 @@
-package com.company;
+package main.java.profession.level1.lesson1;
 
 public class Main {
     //1. Создать пустой проект в IntelliJ IDEA и прописать метод main().

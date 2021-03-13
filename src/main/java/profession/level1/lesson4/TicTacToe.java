@@ -1,4 +1,4 @@
-package hometask4;
+package main.java.profession.level1.lesson4;
 
 import java.util.Random;
 import java.util.Scanner;
