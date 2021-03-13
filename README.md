@@ -1,2 +1,2 @@
-# Gekbrains
+# Geekbrains
 Домашние задания от Geekbrains
