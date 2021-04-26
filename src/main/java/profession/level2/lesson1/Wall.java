@@ -6,4 +6,8 @@ public class Wall {
     public Wall(int height){
         this.height = height;
     }
+
+    public int getHeight() {
+        return height;
+    }
 }

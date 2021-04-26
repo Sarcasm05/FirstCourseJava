@@ -57,7 +57,7 @@ public class Main {
         }
         long a = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {
-            arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));;
+            arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5.0) * Math.cos(0.2f + i / 5.0) * Math.cos(0.4f + i / 2.0));;
         }
         System.out.println(System.currentTimeMillis() - a);
     };
@@ -78,7 +78,7 @@ public class Main {
             @Override
             public void run() {
                 for (int i = 0; i < a1.length; i++) {
-                    a1[i] = (float)(a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+                    a1[i] = (float)(a1[i] * Math.sin(0.2f + i / 5.0) * Math.cos(0.2f + i / 5.0) * Math.cos(0.4f + i / 2.0));
                 }
             }
         });
@@ -86,7 +86,7 @@ public class Main {
             @Override
             public void run() {
                 for (int i = 0; i < a2.length; i++) {
-                    a2[i] = (float)(a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+                    a2[i] = (float)(a2[i] * Math.sin(0.2f + i / 5.0) * Math.cos(0.2f + i / 5.0) * Math.cos(0.4f + i / 2.0 ));
                 }
             }
         });

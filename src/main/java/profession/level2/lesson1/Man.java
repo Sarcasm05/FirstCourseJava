@@ -1,18 +1,32 @@
 package main.java.profession.level2.lesson1;
 
-public class Man extends Entity implements Swimmable, Runnable{
+public class Man implements Jumpable, Runnable{
+    private String name;
+    private int power = 15;
 
-    public Man(String name, int runlenght, int jumpheight){
-        super(name, runlenght, jumpheight);
+    public Man(String name) {
+        this.name = name;
     }
 
     @Override
-    public void run() {
-        System.out.println("Человек бежит отлично");
+    public boolean run(int lenght) {
+        if (lenght <= power) {
+            System.out.println("Человек справился с дистанцией");
+            return true;
+        }else {
+            System.out.println("Человек не справился с дистанцией");
+            return false;
+        }
     }
 
     @Override
-    public void swim() {
-        System.out.println("Человек плывет хорошо");
+    public boolean jump(int height) {
+        if (height <= power) {
+            System.out.println("Человек справился с высотой");
+            return true;
+        }else {
+            System.out.println("Человек не справился с высотой");
+            return false;
+        }
     }
 }
