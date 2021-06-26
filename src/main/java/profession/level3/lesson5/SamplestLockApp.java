@@ -9,10 +9,15 @@ public class SamplestLockApp {
         for (int i = 0; i < 5; i++) {
             int w = i;
             new Thread(() -> {
+                System.out.println("Поток " + w + " подошел к точке синхронизации");
+                lock.lock();
                 try {
-                    System.out.println("Поток " + w + " подошел к точке синхронизации");
-                    lock.lock();
+                    System.out.println("Поток " + w + " зашел в синхронизацию");
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
+                    System.out.println("Поток " + w + " вышел из синхронизации");
                     lock.unlock();
                 }
             }).start();
