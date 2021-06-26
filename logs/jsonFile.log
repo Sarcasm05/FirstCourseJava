@@ -1,0 +1,28 @@
+{
+  "instant" : {
+    "epochSecond" : 1624744760,
+    "nanoOfSecond" : 757000000
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "Main",
+  "message" : "x=5, a=a",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1624744977,
+    "nanoOfSecond" : 935000000
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "Main",
+  "message" : "x=5, a=a",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
